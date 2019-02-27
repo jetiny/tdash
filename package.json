@@ -1,0 +1,70 @@
+{
+  "name": "tdash",
+  "version": "1.0.0",
+  "description": "tdash",
+  "main": "cjs/index.js",
+  "scripts": {
+    "lint": "standard src/** test/**",
+    "build-es": "tsc -m es2015 -outDir es",
+    "build-cjs": "tsc -m commonjs -outDir cjs",
+    "build": "npm-run-all -p build-es build-cjs",
+    "test": "nyc ava"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jetiny/tdash.git"
+  },
+  "author": "jetiny",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jetiny/tdash/issues"
+  },
+  "homepage": "https://github.com/jetiny/tdash#readme",
+  "standard": {
+    "parser": "typescript-eslint-parser",
+    "plugins": [
+      "typescript"
+    ],
+    "ignore": [
+      "script",
+      "dist",
+      "fixtures"
+    ]
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.ts"
+    ],
+    "extension": [
+      ".ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ],
+    "sourceMap": true,
+    "instrument": true,
+    "exclude": [
+      "node_modules",
+      "test",
+      "**/*.d.ts"
+    ]
+  },
+  "ava": {
+    "compileEnhancements": false,
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "devDependencies": {
+    "@types/node": "^10.12.2",
+    "ava": "^1.2.1",
+    "npm-run-all": "^4.1.5",
+    "nyc": "^13.3.0",
+    "standard": "^12.0.1",
+    "ts-node": "^8.0.2",
+    "typescript": "^3.3.3333"
+  }
+}

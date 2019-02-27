@@ -1,0 +1,27 @@
+{
+  "compilerOptions": {
+    "declaration": true,
+    "module": "commonjs",
+    "target": "es2015",
+    "noImplicitAny": true,
+    "sourceMap": false,
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noImplicitThis": true,
+    "diagnostics": true,
+    "listFiles": false,
+    "pretty": true,
+    "moduleResolution": "Node",
+    "noEmitOnError": false,
+    "strictNullChecks": true,
+    "forceConsistentCasingInFileNames": true,
+    "noImplicitReturns": true,
+    "strict": true,
+    "outDir": "./dist",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": [
+    "src/**/*.ts"
+  ],
+  "exclude": []
+}
