@@ -1,12 +1,12 @@
 language: node_js
 node_js:
 - stable
+install:
+ - npm install
+ - npm run build
 deploy:
   provider: npm
   email: 86287344@qq.com
   skip_cleanup: true
   api_key:
     secure: V8VGSt4MNw8l6vZP2u+Zd45oupIK850EGtQ89dEOWBd3h8nKpo5K5K6qY6/RvEIcB/GvBHdlqJpVpIK1QhXvMZP0igk8UntL2iKZSj4ub2BuUTtiscemjc5afescZAJhFbpNuLI3DmtgEWsoXM4SnHTghbgWIbSGZ0iKtV2k90teZY/nurxB5ZZ91oso3EiCpGw+TRv62RGxCNGQI4vqmu7Og4cDVM9VcxZQnCUlm/MCqp3/9vI7rcUF27bOUH2Y04B1DC870XpAztGUiPR3eJAx7fSftAZKDAkm47C9Mjs87953VE0MCPleoHisM3/VayakXxpZjDcnJLc4cQ0UohWpo/baJ2ZDPM3r4xKfcymVSwIutlNYIrTz1t99mjT9MFfxYHhen9ZwrPxYUqs7qaN6PiwlraNzxhp7bckDDRkOhWypbXBReL9nMRlM8/nHf9znCeFJRSUIbI4p9oCGvsRPHB8YICkxb7o217/sF7aqcYHY218ZjWByEeer69wPfSAitUlmWXI1CNYir0PHZrMM86cCWwXExqyHRHu7ESXLddSHT26DePIr/GHBDOHYEdSND2CxGiXhw/w+blMnaUUT5rAxygeE2rBb0VNgcKkMy4cxCF1bFcpH0hzOPbbIo2FfjjvLiKi2kfRX6lrWPXMfv/H4sIWjE2ktPEiawHI=
-- stage: deploy
-  script:
-    - npm run build
