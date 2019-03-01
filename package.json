@@ -1,6 +1,6 @@
 {
   "name": "tdash",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "tdash",
   "main": "cjs/index.js",
   "scripts": {

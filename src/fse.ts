@@ -1,4 +1,6 @@
 import { WriteFileOptions, PathLike } from 'fs'
+import { isObject } from './types';
+
 const fs = require('fs')
 const path = require('path')
 
@@ -9,6 +11,30 @@ export function writeFileAsync (file: PathLike, data: any , opts?: WriteFileOpti
         return reject(err)
       }
       resolve(file)
+    })
+  })
+}
+
+export function readFileAsync(file: PathLike, opts?:any) : Promise<any> {
+  return new Promise((resolve, reject) => {
+    fs.readFile(file, opts, (err: any, data: string | Buffer) => {
+      if (err) {
+        return reject(err)
+      }
+      let format = isObject(opts) ? opts.format : null
+      if (format == 'text') {
+        return resolve(data.toString())
+      }
+      if (format == 'json') {
+        let ret
+        try {
+          ret = JSON.parse(data.toString())
+        } catch (err) {
+          return reject(err)
+        }
+        return resolve(ret)
+      }
+      return resolve(data)
     })
   })
 }
