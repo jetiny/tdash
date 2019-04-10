@@ -1,9 +1,16 @@
 language: node_js
 node_js:
 - stable
+addons:
+  sonarcloud:
+    organization: "jetiny-github" # the key of the org you chose at step #3
+    token:
+      secure: 2867462a79a360b98e6622b3798f7f32a65c049f # encrypted value of your token
 install:
  - npm install
  - npm run build
+script:
+  - sonar-scanner
 deploy:
   provider: npm
   email: 86287344@qq.com
