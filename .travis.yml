@@ -8,7 +8,7 @@ install:
  - npm install
  - npm run build
 script:
-  - sonar-scanner
+  - sonar-scanner -Dsonar.projectKey=jetiny_tdash -Dsonar.organization=jetiny-github -Dsonar.sources=src -Dsonar.host.url=https://sonarcloud.io
 deploy:
   provider: npm
   email: 86287344@qq.com
